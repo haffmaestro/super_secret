@@ -1,3 +1,21 @@
-body > header {
+rob-header > header {
+  align-items: center;
   background: $brand-secondary;
+  color: #fff;
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  padding: 0 $padding;
+
+  a.rise-link {
+    background: url(//platform.rise.xyz/images/rise-logo.0491ededcf.png) no-repeat;
+    background-size: contain;
+    display: block;
+    height: 40px;
+    width: 120px;
+  }
+
+  rob-header-greeting {
+    @include small-caps;
+  }
 }

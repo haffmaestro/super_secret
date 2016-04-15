@@ -1,0 +1,9 @@
+$body-font-size: 13px;
+$body-font-family: 'Source Sans Pro', Arial, sans-serif;
+$body-line-height: 1.3;
+
+@mixin small-caps {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}

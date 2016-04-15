@@ -1,0 +1,23 @@
+$body-bg: #EBEEF2;
+$text-color: #51535A;
+
+// Brand Color: Mustard
+$brand-primary: #E9B74A;
+$brand-primary: $brand-primary;
+$brand-primary-shadow: darken($brand-primary, 15%);
+$brand-primary-hover: #EDC56E;
+$brand-primary-active: darken($brand-primary, 15%);
+$brand-primary-bg-hover: lighten($brand-primary, 30%);
+
+// Brand Color: Purple
+$brand-secondary: #484472;
+$brand-secondary-shadow: #242239;
+$brand-secondary-hover: #6C698E;
+$brand-secondary-active: #242239;
+$brand-secondary-highlight: #DBDAE3;
+
+// Brand Color: Teal
+$brand-tertiary: #4BC0BA;
+$brand-tertiary-shadow: #377A85;
+$brand-tertiary-hover: #54D3CA;
+$brand-tertiary-active: #377A85;
