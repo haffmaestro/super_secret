@@ -3,7 +3,7 @@ var es = require('event-stream');
 var concat = require('gulp-concat');
 var iife = require('gulp-iife');
 var babel = require('gulp-babel');
-var getOrderedConstructs = require('./dirt-globs.js');
+var getOrderedConstructs = require('./js-globs.js');
 
 var templateCache = require('gulp-angular-templatecache');
 

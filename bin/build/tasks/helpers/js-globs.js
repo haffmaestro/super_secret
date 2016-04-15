@@ -12,8 +12,8 @@ var getOrderedConstructs = function() {
   ];
   var globs = [ 'app.js' ];
 
-  globs = globs.concat(orderedConstructs.map((name) => return `/**/*.${name}.js`);
-      ['views', 'libs', 'components'].map`./views
+  globs = globs.concat(orderedConstructs.map((name) => `./views/**/*.${name}.js`));
+
   return globs;
 };
 
