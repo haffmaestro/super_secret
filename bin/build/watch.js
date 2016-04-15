@@ -12,11 +12,9 @@ var config = {
 };
 
 gulp.task('watch', function() {
-  jsDist().livereload();
-  cssDist().livereload();
-  indexDist().livereload();
-
-  livereload.listen();
+  jsDist();
+  cssDist();
+  indexDist();
 
   gulp.watch('./views/**/*.scss', [ 'css' ]);
   gulp.watch(orderedGlobs(), jsDist);
