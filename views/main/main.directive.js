@@ -3,7 +3,7 @@ angular.module('onboarding')
 
 function robMain() {
   return {
-    template: 'views/main.html',
+    template: 'views/main.template.html',
     scope: {}
   };
 }

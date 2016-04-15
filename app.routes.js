@@ -10,17 +10,23 @@
 
     $stateProvider
       .state('main', {
-        url: '/',
-        template: '<rob-main></rob-main>',
-      })
-      .state('main', {
         url: '/:newbId',
         template: '<rob-main></rob-main>',
+      })
+      .state('team', {
+        url: '/:newId/your-team',
+        template: '<rob-your-team></rob-your-team>',
+      })
+      .state('company', {
+        url: '/:newId/about-rise',
+        template: '<rob-about-rise></rob-about-rise>',
       });
 
-
-
     $urlRouterProvider.otherwise('/');
+
+    $urlRouterProvider.when('/', ['$state', function ($state) {
+      $state.go('main');
+    }]);
 
 
   }
