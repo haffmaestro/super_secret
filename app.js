@@ -1,1 +1,3 @@
-angular.module('onboarding');
+angular.module('onboarding', [
+    'ui.router',
+]);
