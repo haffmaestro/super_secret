@@ -33,7 +33,7 @@ var components = function() {
         .pipe(babel(config.babel));
 
   var templateJs = gulp
-        .src('views/**/*.template.html')
+        .src('{views,components,libs}/**/*.html')
         .pipe(templateCache(config.templateCache))
         .pipe(iife(config.iife));
 

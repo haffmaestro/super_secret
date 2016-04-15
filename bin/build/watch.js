@@ -5,7 +5,7 @@ var jsDist = require('./tasks/js.js')();
 var cssDist = require('./tasks/css.js')();
 var indexDist = require('./tasks/index.js');
 
-var orderedGlobs = require('./tasks/helpers/dirt-globs.js');
+var orderedGlobs = require('./tasks/helpers/js-globs.js');
 
 var config = {
   dest: './dist'
