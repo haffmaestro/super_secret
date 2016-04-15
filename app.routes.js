@@ -2,16 +2,32 @@
   'use strict';
 
   angular.module('onboarding')
-    .config(outesConfig);
+    .config(routesConfig);
 
-  routesConfig.$inject = [ '$stateProvider' ];
+  routesConfig.$inject = [ '$stateProvider', '$urlRouterProvider' ];
 
-  function routesConfig($stateProvider) {
+  function routesConfig($stateProvider, $urlRouterProvider) {
 
     $stateProvider
       .state('main', {
-        url: '/',
+        url: '/:newbId',
         template: '<rob-main></rob-main>',
+      })
+      .state('team', {
+        url: '/:newId/your-team',
+        template: '<rob-your-team></rob-your-team>',
+      })
+      .state('company', {
+        url: '/:newId/about-rise',
+        template: '<rob-about-rise></rob-about-rise>',
       });
+
+    $urlRouterProvider.otherwise('/');
+
+    $urlRouterProvider.when('/', ['$state', function ($state) {
+      $state.go('main');
+    }]);
+
+
   }
 })();
