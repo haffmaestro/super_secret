@@ -1,0 +1,14 @@
+<h1>The Team</h1>
+
+<video src="videofile.ogg" autoplay poster="posterimage.jpg">
+  Sorry, your browser doesn't support embedded videos,
+  but don't worry, you can <a href="videofile.ogg">download it</a>
+  and watch it with your favorite video player!
+</video>
+
+<ul class="team-members">
+  <li ng-repeat="teammate in vm.teammates">
+    <h3>{{teammate.name}}</h3>
+    <p class="title">{{teammate.title}}</p>
+  </li>
+</ul>
