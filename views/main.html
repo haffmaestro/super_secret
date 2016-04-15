@@ -1,0 +1,20 @@
+<h1>Hello, {{newb.name}}</h1>
+
+<div class="intro-blurb">
+  <p>The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dog</p>
+  <p>The quick brown fox jumps over the lazy dog The quick brown fox jumps over the lazy dogThe quick brown fox jumps over the lazy dog</p>
+  <p>The quick brown fox jumps over the lazy dog</p>
+</div>
+
+<div class="timeline">
+  <section ng-repeat="section in vm.data.timelineSections"
+           ng-class="[section.topic, {completed: vm.isSectionCompleted(section)}]">
+    <h3>{{section.title}}</h3>
+    <ul class="checklist">
+      <li ng-repeat="item in section.items">
+        <input type="checkbox" ng-model="item.completed">
+        {{item.text}}
+      </li>
+    </ul>
+  </section>
+</div>
