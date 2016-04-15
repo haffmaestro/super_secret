@@ -17,7 +17,7 @@ var config = {
 };
 
 gulp.task('watch', [ 'dist' ], function() {
-  gulp.watch('./views/**/*.scss', [ 'css' ]);
+  gulp.watch('./{global-sass,components,views}/**/*.scss', [ 'css' ]);
   gulp.watch(orderedGlobs(), [ 'js' ]);
   gulp.watch('./index.html', [ 'index' ]);
   gulp.watch('./assets/**/*', [ 'assets' ]);

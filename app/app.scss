@@ -1,6 +1,3 @@
-@import "global-sass/reset";
-
-@import "global-sass/base";
-
-@import "components/components";
-@import "views/views";
+@import "/global-sass/global";
+@import "/components/components";
+@import "/views/views";
