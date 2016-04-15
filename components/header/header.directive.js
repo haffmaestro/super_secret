@@ -3,7 +3,7 @@ angular.module('onboarding')
 
 function robHeader() {
   return {
-    template: 'components/header/header.template.html',
+    templateUrl: 'components/header/header.template.html',
     scope: {}
   };
 }
