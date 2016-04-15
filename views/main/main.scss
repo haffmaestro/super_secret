@@ -1,0 +1,58 @@
+h1 {
+  color: $brand-primary;
+  font-size: 64px;
+  margin-bottom: $padding;
+  font-weight: 700;
+
+  text-align: center;
+
+  small {
+    font-size: 32px;
+    display: block;
+  }
+}
+
+.wisam-vid-intro {
+  color: $brand-secondary;
+  font-size: 32px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.wisam-vid {
+  width: 100%;
+}
+
+.timeline-header {
+  background: $brand-primary;
+  color: #fff;
+  text-align: center;
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+}
+
+section {
+  h3 {
+    width: 300px;
+    padding: 10px $padding;
+    @include small-caps;
+    color: $brand-secondary;
+    border: 1px solid $brand-secondary;
+    border-radius: 3px;
+    text-align: center;
+  }
+
+  a {
+    color: $brand-primary;
+  }
+
+  ul.checklist {
+    list-style-type: none;
+  }
+}

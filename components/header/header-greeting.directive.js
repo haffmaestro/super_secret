@@ -1,6 +1,8 @@
 angular.module('onboarding')
   .directive('robHeaderGreeting', robHeaderGreeting);
 
+Controller.$inject = ['NEWB'];
+
 function robHeaderGreeting() {
   return {
     templateUrl: 'components/header/header-greeting.template.html',
@@ -11,10 +13,8 @@ function robHeaderGreeting() {
   };
 }
 
-function Controller() {
+function Controller(NEWB) {
   var vm = this;
 
-  vm.newb = {
-    name: 'Zachary Belford',
-  };
+  vm.newb = NEWB;
 }

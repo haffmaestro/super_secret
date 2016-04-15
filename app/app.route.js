@@ -17,7 +17,7 @@
         url: '/:newId/your-team',
         template: '<rob-your-team></rob-your-team>',
       })
-      .state('company', {
+      .state('about', {
         url: '/:newId/about-rise',
         template: '<rob-about-rise></rob-about-rise>',
       });
