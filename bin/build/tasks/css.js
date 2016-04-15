@@ -16,7 +16,7 @@ function css(opts) {
   var config = _.defaults(opts, baseConfig);
 
   return function() {
-    return es.merge(gulp.src('./app.scss'))
+    return es.merge(gulp.src('./app/app.scss'))
       .pipe(sass().on('error', sass.logError))
       .pipe(gulp.dest(config.dest));
   };
