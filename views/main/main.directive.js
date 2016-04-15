@@ -1,5 +1,5 @@
 angular.module('onboarding')
-  .directive('welcome', robMain);
+  .directive('robMain', robMain);
 
 function robMain() {
   return {
