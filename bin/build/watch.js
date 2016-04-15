@@ -1,9 +1,14 @@
 var gulp = require('gulp');
 var livereload = require('gulp-livereload');
 
-var jsDist = require('./tasks/js.js')();
-var cssDist = require('./tasks/css.js')();
+var js = require('./tasks/js.js');
+var css = require('./tasks/css.js');
 var indexDist = require('./tasks/index.js');
+var assets = require('./tasks/assets.js');
+
+const jsDist = js();
+const cssDist = css();
+const assetsDist = assets();
 
 var orderedGlobs = require('./tasks/helpers/js-globs.js');
 
@@ -11,14 +16,11 @@ var config = {
   dest: './dist'
 };
 
-gulp.task('watch', function() {
-  jsDist();
-  cssDist();
-  indexDist();
-
+gulp.task('watch', [ 'dist' ], function() {
   gulp.watch('./views/**/*.scss', [ 'css' ]);
-  gulp.watch(orderedGlobs(), jsDist);
-  gulp.watch('./index.html', indexDist);
+  gulp.watch(orderedGlobs(), [ 'js' ]);
+  gulp.watch('./index.html', [ 'index' ]);
+  gulp.watch('./assets/**/*', [ 'assets' ]);
 });
 
 gulp.task('default', [ 'dist', 'watch' ]);
