@@ -60,7 +60,7 @@
 
     /**
      * How you listen to the providers events;
-     * 
+     *
      * @param  {Function} func callback you want executed;
      */
     function attachEventListener(func){
@@ -70,9 +70,9 @@
     /**
      * Used by the provider to send events and data
      * to the listeners
-     * 
-     * @param  {String} event   
-     * @param  {Object} payload 
+     *
+     * @param  {String} event
+     * @param  {Object} payload
      */
     function issueEvent(event, payload){
       _eventListeners.forEach((func)=>{
@@ -83,7 +83,7 @@
     /**
      * Authorizes the user on the site with Trello
      * Gets their user from the API
-     * 
+     *
      * @return {Promise} Promise resolves to the users id;
      */
     function authorize(){
@@ -123,10 +123,10 @@
       })
     }
 
-    
+
     /**
      * Finds the onboarding board based on a regex
-     * @return {Object} 
+     * @return {Object}
      */
     function findOnboardingBoard(){
       return getBoards(_member).then((arrayOfBoards)=>{
@@ -136,11 +136,11 @@
         })[0];
       })
     }
-    
+
     /**
      * Gets all boards for the given member
-     * @param  {Object} member 
-     * @return {Promise}        
+     * @param  {Object} member
+     * @return {Promise}
      */
     function getBoards(member){
       return $q.all(member.idBoards.map(getBoard));
