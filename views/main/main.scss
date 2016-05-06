@@ -30,6 +30,10 @@ h1 {
 
 
 section.timeline {
+  $tail-length: 40px;
+  margin-bottom: $tail-length;
+  position: relative;
+
   .timeline-header {
     background: $brand-primary;
     color: #fff;
@@ -49,36 +53,81 @@ section.timeline {
   }
 
   section {
-    $header-width: 300px;
-
-    display: flex;
-    flex-direction: column;
+    $bullet-offset: 10%;
+    $bullet-size: 15px;
+    $header-max-width: 300px;
 
     @mixin pull-left {
-      margin-right: 0;
-      margin-left: auto;
-    }
-
-    @mixin pull-right {
       margin-left: 0;
       margin-right: auto;
+      padding: 0 $padding*2 0 0;
 
       .checklist {
-        width: $header-width;
+        max-width: $header-max-width;
       }
 
       h3, .checklist {
         margin-left: auto;
+        margin-right: 0;
+        width: 100%;
       }
     }
 
-    margin: $padding 0;
-    width: 42%;
+    @mixin pull-right {
+      margin-right: 0;
+      margin-left: auto;
+      padding: 0 0 0 $padding*2;
+      text-align: left;
 
-    @include pull-right;
+      h3, .checklist {
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      &:before {
+        left: -$bullet-size/2;
+        right: auto;
+      }
+
+      &:after {
+        left: -1.5px;
+        right: auto;
+      }
+    }
+
+    @include pull-left;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 -12px;
+    position: relative;
+    text-align: right;
+    width: 50%;
+
+    &:before {
+      display: block;
+      content: '';
+      position: absolute;
+      height: $bullet-size;
+      width: $bullet-size;
+      border-radius: 50%;
+      top: 15px;
+      right: -$bullet-size/2;
+      background: $brand-secondary;
+    }
+
+    &:after {
+      display: block;
+      content: '';
+      position: absolute;
+      border-left: 3px solid $brand-primary;
+      width: 3px;
+      right: -1.5px;
+      top: 33px;
+      bottom: 0;
+    }
 
     h3 {
-      width: $header-width;
+      max-width: $header-max-width;
       padding: 10px $padding;
       @include small-caps;
       color: $brand-secondary;
@@ -95,6 +144,7 @@ section.timeline {
 
     ul.checklist {
       list-style-type: none;
+      text-align: left;
 
       li {
         padding: 5px 0;
@@ -109,7 +159,18 @@ section.timeline {
     }
 
     &:nth-child(2n+0) {
-      @include pull-left;
+      @include pull-right;
     }
+  }
+
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    border-left: 3px dashed $brand-primary;
+    height: $tail-length;
+    left: 50%;
+    margin-left: -1px;
+    bottom: -$tail-length - 8px;
   }
 }
