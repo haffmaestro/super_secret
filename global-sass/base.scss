@@ -12,9 +12,19 @@ body {
   > main {
     width: 90%;
     min-width: 540px;
-    max-width: 900px;
+    max-width: 840px;
     margin: 0 auto;
 
     padding: $padding*2 0;
   }
+
+  a {
+    &:not(:hover) {
+      text-decoration: none;
+    }
+  }
+}
+
+.clearfix {
+  @include clearfix;
 }

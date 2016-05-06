@@ -12,47 +12,104 @@ h1 {
   }
 }
 
+.intro-blurb {
+  margin: $padding $padding*2 $padding*3;
+}
+
 .wisam-vid-intro {
   color: $brand-secondary;
   font-size: 32px;
   font-weight: 600;
   font-style: italic;
+  margin: $padding*2 0;
 }
 
 .wisam-vid {
   width: 100%;
 }
 
-.timeline-header {
-  background: $brand-primary;
-  color: #fff;
-  text-align: center;
 
-  h2 {
-    font-size: 32px;
-  }
-
-  h3 {
-    font-size: 24px;
-  }
-}
-
-section {
-  h3 {
-    width: 300px;
-    padding: 10px $padding;
-    @include small-caps;
-    color: $brand-secondary;
-    border: 1px solid $brand-secondary;
-    border-radius: 3px;
+section.timeline {
+  .timeline-header {
+    background: $brand-primary;
+    color: #fff;
+    font-weight: 600;
     text-align: center;
+
+    margin: $padding*3 -50vw $padding*2;
+    padding: $padding 50vw;
+
+    h2 {
+      font-size: 32px;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
   }
 
-  a {
-    color: $brand-primary;
-  }
+  section {
+    $header-width: 300px;
 
-  ul.checklist {
-    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+
+    @mixin pull-left {
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+    @mixin pull-right {
+      margin-left: 0;
+      margin-right: auto;
+
+      .checklist {
+        width: $header-width;
+      }
+
+      h3, .checklist {
+        margin-left: auto;
+      }
+    }
+
+    margin: $padding 0;
+    width: 42%;
+
+    @include pull-right;
+
+    h3 {
+      width: $header-width;
+      padding: 10px $padding;
+      @include small-caps;
+      color: $brand-secondary;
+      border: 1px solid $brand-secondary;
+      border-radius: 3px;
+      text-align: center;
+
+      margin-bottom: 15px;
+    }
+
+    a {
+      color: $brand-primary;
+    }
+
+    ul.checklist {
+      list-style-type: none;
+
+      li {
+        padding: 5px 0;
+
+        &:before {
+          content: '\2713';
+          color: $brand-secondary;
+          margin-right: 12px;
+          display: inline-block;
+        }
+      }
+    }
+
+    &:nth-child(2n+0) {
+      @include pull-left;
+    }
   }
 }
