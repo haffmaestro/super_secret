@@ -1,7 +1,8 @@
-angular.module('onboarding')
+angular
+  .module('onboarding')
   .directive('robHeaderGreeting', robHeaderGreeting);
 
-Controller.$inject = ['NEWB'];
+Controller.$inject = ['trelloData'];
 
 function robHeaderGreeting() {
   return {
@@ -13,8 +14,16 @@ function robHeaderGreeting() {
   };
 }
 
-function Controller(NEWB) {
+function Controller(trelloData) {
   var vm = this;
 
-  vm.newb = NEWB;
+  activate();
+
+  function activate(){
+    trelloData.attachEventListener(updateName);
+  }
+
+  function updateName(){
+    vm.user = trelloData.getUser();
+  }
 }
