@@ -53,7 +53,8 @@ section.timeline {
   }
 
   section {
-    $bullet-offset: 10%;
+    $arrow-size: 12px;
+    $bullet-offset: 8%;
     $bullet-size: 15px;
     $header-max-width: 300px;
 
@@ -93,6 +94,17 @@ section.timeline {
         left: -1.5px;
         right: auto;
       }
+
+      h3 {
+        &:before {
+          left: -($arrow-size+2)/2;
+          right: auto;
+        }
+        &:after {
+          left: -$arrow-size/2;
+          right: auto;
+        }
+      }
     }
 
     @include pull-left;
@@ -127,15 +139,39 @@ section.timeline {
     }
 
     h3 {
+      @include small-caps;
+      background: #fff;
       max-width: $header-max-width;
       padding: 10px $padding;
-      @include small-caps;
       color: $brand-secondary;
       border: 1px solid $brand-secondary;
       border-radius: 3px;
+      margin-bottom: 15px;
+      position: relative;
       text-align: center;
 
-      margin-bottom: 15px;
+      @mixin round-arrow($size, $color) {
+        border-radius: 3px;
+        display: block;
+        content: '';
+        position: absolute;
+        height: $size;
+        width: $size;
+        background: $color;
+        right: -$size/2;
+        top: 50%;
+        margin-top: -$size/2;
+        transform: rotate(45deg);
+      }
+
+      &:before {
+        @include round-arrow($arrow-size+2, $brand-secondary);
+        z-index: -1;
+      }
+
+      &:after {
+        @include round-arrow($arrow-size, #fff);
+      }
     }
 
     a {
