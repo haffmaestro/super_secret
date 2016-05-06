@@ -13,9 +13,16 @@
 
   <h2 class="wisam-vid-intro">Here's a quick welcome from Wisam, our CEO:</h2>
 
-  <a href="https://www.youtube.com/watch?v=9NcPvmk4vfo">
-    <img class="wisam-vid" src="assets/wisam.png">
-  </a>
+
+  <img ng-hide="vm.state.videoClicked"
+       ng-click="vm.state.videoClicked = true;"
+       class="wisam-vid"
+       src="assets/wisam.png">
+
+  <div class="iframe-wrapper" ng-show="vm.state.videoClicked">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ygI-2F8ApUM" frameborder="0" allowfullscreen>
+    </iframe>
+  </div>
 </section>
 
 <section class="timeline">
