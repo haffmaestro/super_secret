@@ -11,8 +11,14 @@
   function trelloData($q) {
 
     var service = {
-      attachEventListener: attachEventListener
+      attachEventListener: attachEventListener,
+      updateChecklistItem: updateChecklistItem,
+      getCards: () => _cards,
+      getChecklists: getChecklists,
+      getUser: getUser
     }
+
+    window.trelloData = service;
 
     var memberId;
     var _member;
@@ -20,7 +26,7 @@
     var _cards;
     var _eventListeners = [];
 
-    var onboardingBoard = /Rise onboarding template/i;
+    var onboardingBoard = /Rise Onboarding Template/i;
 
     /**
      * Initializes this service with the correct data
@@ -164,6 +170,52 @@
 
     function getChecklist(checklistId){
       return Trello.checklists.get(checklistId);
+    }
+
+    function getChecklists(){
+      return _cards.reduce((memo, card)=>{
+        return memo.concat(card.checklists);
+      }, [])
+    }
+
+    function getUser(){
+      return _member;
+    }
+
+    /**
+     * This will delete the item on the trello API
+     * corresponding to the checkitem.id
+     * 
+     * and recreate one with the checkitem.name
+     * and the checked status will be the checkitem status
+     * 
+     * @param  {String} checklistId 
+     * @param  {Object} checkitem   
+     * @return {Promise}            Resolves to the new item
+     */
+    function updateChecklistItem(checklistId, checkitem){
+      var updatePromise = $q.defer();
+
+      var newCheckitem = {
+        name: checkitem.name,
+        checked: getStatusBoolean(checkitem.status)
+      };
+
+      Trello.del(`/checklists/${checklistId}/checkitems/${checkitem.id}`)
+        .then((response)=>{
+
+          Trello.post(`/checklists/${checklistId}/checkitems`, newCheckitem)
+            .then((response)=>{
+              updatePromise.resolve(response);
+            })
+
+        })
+       
+      return updatePromise;
+    }
+
+    function getStatusBoolean(status){
+      return status === "complete" ? true : false;
     }
 
     initialize();
