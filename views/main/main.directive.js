@@ -17,10 +17,10 @@ function Controller(NEWB, trelloData) {
   var vm = this;
 
   vm.data = {
-    newb: NEWB,
+    user: trelloData.getUser(),
   };
 
   trelloData.attachEventListener(function({event, payload}) {
-    // could get user from AUTHORIZE here
+    vm.data.user = trelloData.getUser();
   });
 }

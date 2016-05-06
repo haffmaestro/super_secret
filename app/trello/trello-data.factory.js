@@ -21,7 +21,9 @@
     window.trelloData = service;
 
     var memberId;
-    var _member;
+    var _member = {
+      name: ""
+    }
     var _onboardingTemplate;
     var _cards;
     var _eventListeners = [];
