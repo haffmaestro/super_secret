@@ -20,6 +20,8 @@ function Controller(trelloData) {
     checklists: null,
   };
 
+  vm.onItemChecked = onItemChecked;
+
   trelloData.attachEventListener(function({event, payload}) {
     if (event !== 'INITIALIZE') return;
 
@@ -29,8 +31,6 @@ function Controller(trelloData) {
         items: getChecklistItems(card),
       };
     });
-
-    console.log(vm.data.checklists);
   });
 
   function getChecklistItems(card) {
@@ -39,5 +39,9 @@ function Controller(trelloData) {
     return _.map(items, function(item) {
       return _.extend(item, { done: item.state === 'complete' });
     });
+  }
+
+  function onItemChecked(item) {
+    // gotta talk back to server now
   }
 }

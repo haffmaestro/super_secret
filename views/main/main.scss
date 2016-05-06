@@ -190,11 +190,14 @@ section.timeline {
       li {
         padding: 5px 0;
 
-        &:before {
-          content: '\2713';
-          color: $brand-secondary;
-          margin-right: 12px;
-          display: inline-block;
+        input {
+          margin-right: 8px;
+        }
+
+        [marked] {
+          p {
+            display: inline;
+          }
         }
       }
     }
