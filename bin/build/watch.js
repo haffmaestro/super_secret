@@ -22,6 +22,7 @@ gulp.task('watch', [ 'dist' ], function() {
   gulp.watch(orderedGlobs(), [ 'js' ,'reloadJs']);
   gulp.watch('./index.html', [ 'index','reloadIndex' ]);
   gulp.watch('./assets/**/*', [ 'assets' ]);
+  gulp.watch('./{components,views}/**/*.template.html', [ 'js', 'reloadJs' ]);
 });
 
 gulp.task('default', [ 'dist', 'watch' ,'connect']);
