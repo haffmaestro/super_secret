@@ -7,11 +7,14 @@ body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
 
+  width: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
 
 
   > main {
     width: 90%;
-    min-width: 540px;
+    min-width: 480px;
     max-width: 840px;
     margin: 0 auto;
 
