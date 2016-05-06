@@ -37,6 +37,21 @@ section.welcome {
   .wisam-vid {
     width: 100%;
   }
+
+  .iframe-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
 }
 
 section.timeline {
@@ -197,11 +212,14 @@ section.timeline {
       li {
         padding: 5px 0;
 
-        &:before {
-          content: '\2713';
-          color: $brand-secondary;
-          margin-right: 12px;
-          display: inline-block;
+        input {
+          margin-right: 8px;
+        }
+
+        [marked] {
+          p {
+            display: inline;
+          }
         }
       }
     }
@@ -218,7 +236,7 @@ section.timeline {
     border-left: 3px dashed $brand-primary;
     height: $tail-length;
     left: 50%;
-    margin-left: -1px;
+    margin-left: -1.5px;
     bottom: -$tail-length - 8px;
   }
 }

@@ -20,24 +20,30 @@ function Controller(trelloData) {
     checklists: null,
   };
 
+  vm.onItemChecked = _.debounce(_onItemChecked, 250);
+
   trelloData.attachEventListener(function({event, payload}) {
     if (event !== 'INITIALIZE') return;
 
     vm.data.checklists = _.map( payload, function(card) {
+      var checklist = _.first(card.checklists);
+
       return {
         name: card.name,
-        items: getChecklistItems(card),
+        id: checklist.id,
+        items: decorateChecklistItems(checklist.checkItems),
       };
     });
-
-    console.log(vm.data.checklists);
   });
 
-  function getChecklistItems(card) {
-    var items = _.first(card.checklists).checkItems;
-
+  function decorateChecklistItems(items) {
     return _.map(items, function(item) {
       return _.extend(item, { done: item.state === 'complete' });
     });
+  }
+
+  function _onItemChecked(checklistId, item) {
+    item.state = item.done ? 'complete' : 'incomplete';
+    trelloData.updateChecklistItem(checklistId, item);
   }
 }

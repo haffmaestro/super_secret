@@ -187,12 +187,12 @@
     /**
      * This will delete the item on the trello API
      * corresponding to the checkitem.id
-     * 
+     *
      * and recreate one with the checkitem.name
      * and the checked status will be the checkitem status
-     * 
-     * @param  {String} checklistId 
-     * @param  {Object} checkitem   
+     *
+     * @param  {String} checklistId
+     * @param  {Object} checkitem
      * @return {Promise}            Resolves to the new item
      */
     function updateChecklistItem(checklistId, checkitem){
@@ -200,7 +200,7 @@
 
       var newCheckitem = {
         name: checkitem.name,
-        checked: getStatusBoolean(checkitem.status)
+        checked: getStatusBoolean(checkitem.state)
       };
 
       Trello.del(`/checklists/${checklistId}/checkitems/${checkitem.id}`)
@@ -212,7 +212,7 @@
             })
 
         })
-       
+
       return updatePromise;
     }
 

@@ -16,6 +16,10 @@ function robMain() {
 function Controller(NEWB, trelloData) {
   var vm = this;
 
+  vm.state = {
+    videoClicked: false,
+  };
+
   vm.data = {
     user: trelloData.getUser(),
   };
