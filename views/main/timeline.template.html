@@ -10,7 +10,7 @@
       <label>
         <input type="checkbox"
                ng-model="item.done"
-               ng-change="vm.onItemChecked(item)">
+               ng-change="vm.onItemChecked(checklist.id, item)">
         <span marked="item.name"></span>
       </label>
     </li>

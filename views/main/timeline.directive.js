@@ -20,28 +20,30 @@ function Controller(trelloData) {
     checklists: null,
   };
 
-  vm.onItemChecked = onItemChecked;
+  vm.onItemChecked = _.debounce(_onItemChecked, 250);
 
   trelloData.attachEventListener(function({event, payload}) {
     if (event !== 'INITIALIZE') return;
 
     vm.data.checklists = _.map( payload, function(card) {
+      var checklist = _.first(card.checklists);
+
       return {
         name: card.name,
-        items: getChecklistItems(card),
+        id: checklist.id,
+        items: decorateChecklistItems(checklist.checkItems),
       };
     });
   });
 
-  function getChecklistItems(card) {
-    var items = _.first(card.checklists).checkItems;
-
+  function decorateChecklistItems(items) {
     return _.map(items, function(item) {
       return _.extend(item, { done: item.state === 'complete' });
     });
   }
 
-  function onItemChecked(item) {
-    // gotta talk back to server now
+  function _onItemChecked(checklistId, item) {
+    item.state = item.done ? 'complete' : 'incomplete';
+    trelloData.updateChecklistItem(checklistId, item);
   }
 }
