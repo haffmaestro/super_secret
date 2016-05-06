@@ -1,7 +1,7 @@
 angular.module('onboarding')
   .directive('robMain', robMain);
 
-Controller.$inject = ['NEWB'];
+Controller.$inject = ['NEWB', 'trelloData'];
 
 function robMain() {
   return {
@@ -13,17 +13,14 @@ function robMain() {
   };
 }
 
-function Controller(NEWB) {
+function Controller(NEWB, trelloData) {
   var vm = this;
 
-  vm.newb = NEWB;
+  vm.data = {
+    newb: NEWB,
+  };
 
-  vm.timelineSections = [
-    {
-      topic: 'week-before',
-      title: 'A week before',
-      items: [
-      ],
-    },
-  ];
+  trelloData.attachEventListener(function({event, payload}) {
+    // could get user from AUTHORIZE here
+  });
 }

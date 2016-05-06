@@ -1,31 +1,35 @@
-h1 {
-  color: $brand-primary;
-  font-size: 64px;
-  margin-bottom: $padding;
-  font-weight: 700;
+section.welcome {
+  margin-top: $padding*2;
 
-  text-align: center;
+  h1 {
+    color: $brand-primary;
+    font-size: 64px;
+    margin-bottom: $padding;
+    font-weight: 700;
 
-  small {
-    font-size: 32px;
-    display: block;
+    text-align: center;
+
+    small {
+      font-size: 32px;
+      display: block;
+    }
   }
-}
 
-.intro-blurb {
-  margin: $padding $padding*2 $padding*3;
-}
+  .intro-blurb {
+    margin: $padding $padding*2 $padding*3;
+  }
 
-.wisam-vid-intro {
-  color: $brand-secondary;
-  font-size: 32px;
-  font-weight: 600;
-  font-style: italic;
-  margin: $padding*2 0;
-}
+  .wisam-vid-intro {
+    color: $brand-secondary;
+    font-size: 32px;
+    font-weight: 600;
+    font-style: italic;
+    margin: $padding*2 0;
+  }
 
-.wisam-vid {
-  width: 100%;
+  .wisam-vid {
+    width: 100%;
+  }
 }
 
 section.timeline {
