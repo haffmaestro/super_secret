@@ -7,3 +7,23 @@ $body-line-height: 1.6;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+
+h1 {
+  color: $brand-secondary;
+  font-size: 70px;
+  margin-bottom: $padding;
+  font-weight: 700;
+  text-align: center;
+}
+
+h2 {
+  color: $brand-secondary;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+h3 {
+  color: $brand-primary;
+  font-size: 28px;
+  font-weight: 700;
+}
