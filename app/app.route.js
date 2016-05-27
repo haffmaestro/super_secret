@@ -36,6 +36,10 @@
       .state('core-values', {
         url: '/core-values',
         template: '<rob-core-values></rob-core-values>'
+      })
+      .state('policiesandprocesses', {
+        url: '/policiesandprocesses',
+        template: '<rob-policiesandprocesses></rob-policiesandprocesses>'
       });
 
     $urlRouterProvider.otherwise('/');

@@ -16,11 +16,23 @@ a {
   }
 }
 
+nav.page {
+  a {
+    color: $brand-secondary;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    text-transform: uppercase;
+    display: block;
+  }
+}
+
 // Headers
 
 h1 {
   color: $brand-primary;
   font-size: 70px;
+  margin-top: 100px;
   margin-bottom: $padding;
   font-weight: 700;
 
