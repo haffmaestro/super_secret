@@ -40,6 +40,10 @@
       .state('policiesandprocesses', {
         url: '/policiesandprocesses',
         template: '<rob-policiesandprocesses></rob-policiesandprocesses>'
+      })
+      .state('companyandproducts', {
+        url: '/companyandproducts',
+        template: '<rob-companyandproducts></rob-companyandproducts>'
       });
 
     $urlRouterProvider.otherwise('/');
