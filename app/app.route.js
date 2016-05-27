@@ -33,9 +33,9 @@
         url: '/meetyourteam',
         template: '<rob-meetyourteam></rob-meetyourteam>'
       })
-      .state('core-values', {
-        url: '/core-values',
-        template: '<rob-core-values></rob-core-values>'
+      .state('corevalues', {
+        url: '/corevalues',
+        template: '<rob-corevalues></rob-corevalues>'
       })
       .state('policiesandprocesses', {
         url: '/policiesandprocesses',

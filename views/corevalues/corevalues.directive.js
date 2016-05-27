@@ -1,11 +1,11 @@
 angular.module('onboarding')
-  .directive('robMynewpage', robMynewpage);
+  .directive('robCorevalues', robCorevalues);
 
 Controller.$inject = ['trelloData'];
 
-function robMynewpage() {
+function robCorevalues() {
   return {
-    templateUrl: 'views/mynewpage/mynewpage.template.html',
+    templateUrl: 'views/corevalues/corevalues.template.html',
     scope: {},
     controllerAs: 'vm',
     controller: Controller,
