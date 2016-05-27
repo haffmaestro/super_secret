@@ -32,10 +32,11 @@
       .state('meetyourteam', {
         url: '/meetyourteam',
         template: '<rob-meetyourteam></rob-meetyourteam>'
+      })
       .state('core-values', {
         url: '/core-values',
         template: '<rob-core-values></rob-core-values>'
-      })
+      });
 
     $urlRouterProvider.otherwise('/');
 
