@@ -25,6 +25,10 @@
         url: '/content',
         template: '<rob-content></rob-content>'
       })
+      .state('mynewpage', {
+        url: '/mynewpage',
+        template: '<rob-mynewpage></rob-mynewpage>'
+      })
 
     $urlRouterProvider.otherwise('/');
 
