@@ -10,7 +10,7 @@
 
     $stateProvider
       .state('main', {
-        url: '/:newbId',
+        url: '/',
         template: '<rob-main></rob-main>',
       })
       .state('team', {
@@ -20,7 +20,11 @@
       .state('about', {
         url: '/:newId/about-rise',
         template: '<rob-about-rise></rob-about-rise>',
-      });
+      })
+      .state('lexicon', {
+        url: '/content',
+        template: '<rob-content></rob-content>'
+      })
 
     $urlRouterProvider.otherwise('/');
 
