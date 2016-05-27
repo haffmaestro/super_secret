@@ -1,0 +1,19 @@
+.container { width: 100%; }
+
+nav.page {
+  width: 20%;
+  display: inline-block;
+  border-right: 1px solid #ddd;
+}
+
+div.page {
+  width: 79%;
+  display: inline-block;
+  vertical-align: top;
+
+  section {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 80px;
+  }
+}
