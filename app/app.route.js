@@ -29,6 +29,10 @@
         url: '/mynewpage',
         template: '<rob-mynewpage></rob-mynewpage>'
       })
+      .state('meetyourteam', {
+        url: '/meetyourteam',
+        template: '<rob-meetyourteam></rob-meetyourteam>'
+      })
 
     $urlRouterProvider.otherwise('/');
 
