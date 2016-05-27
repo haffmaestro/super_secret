@@ -8,12 +8,26 @@ $body-line-height: 1.6;
   letter-spacing: 2px;
 }
 
+// Links
+a {
+  color: $brand-tertiary;
+  &:hover {
+    color: $brand-tertiary-hover;
+  }
+}
+
+// Headers
+
 h1 {
-  color: $brand-secondary;
+  color: $brand-primary;
   font-size: 70px;
   margin-bottom: $padding;
   font-weight: 700;
-  text-align: center;
+
+  small {
+    font-size: 32px;
+    display: block;
+  }
 }
 
 h2 {
@@ -26,4 +40,15 @@ h3 {
   color: $brand-primary;
   font-size: 28px;
   font-weight: 700;
+}
+
+
+// Lists
+
+ul {
+  display: inline-block;
+
+  li {
+    text-align: left;
+  }
 }

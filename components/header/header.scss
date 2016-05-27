@@ -18,4 +18,12 @@ rob-header > header {
   rob-header-greeting {
     @include small-caps;
   }
+
+  nav a {
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
